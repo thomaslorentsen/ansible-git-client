@@ -39,8 +39,7 @@ script:
   # Check git config
   - git config --list | grep gitmessage
   - git config --list | grep excludesfile
-  - git config --list | grep editor
-  - git config --list | grep A+1 -e commit -e push -e pull
+  - git config --list | grep -e editor -e commit -e push -e pull
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
