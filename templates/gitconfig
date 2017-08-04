@@ -1,0 +1,25 @@
+[core]
+        excludesfile = ~/.gitignore_global
+        editor = nano
+
+[user]
+        email = {{ git_email }}
+        name = {{ git_name }}
+{% if variable is defined %}
+        signingkey = {{ git_signingkey }}
+{% endif %}
+
+[color]
+        ui = true
+
+[commit]
+{% if variable is defined %}
+        gpgsign = true
+{% endif %}
+        template = ~/.gitmessage.txt
+
+[push]
+        default = simple
+
+[pull]
+        rebase = true

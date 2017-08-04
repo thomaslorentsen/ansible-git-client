@@ -2,4 +2,7 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-git-client
+    - ansible-git-client:
+      role: ansible-git-client
+      git_name: ansible
+      git_email: ansible@test.com

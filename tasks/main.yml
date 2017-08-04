@@ -5,4 +5,19 @@
     state: present
   with_items:
     - git
+
+- name: install global git config template
+  template:
+    src: gitconfig
+    dest: ~/.gitconfig
+
+- name: install git message config template
+  template:
+    src: gitmessage.txt
+    dest: ~/.gitmessage.txt
+
+- name: install global git ignore template
+  template:
+    src: gitignore_global
+    dest: ~/.gitignore_global
 ...
