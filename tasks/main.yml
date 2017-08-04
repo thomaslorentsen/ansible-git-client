@@ -7,11 +7,6 @@
   with_items:
     - git
 
-- name: install global git config template
-  template:
-    src: gitconfig
-    dest: ~/.gitconfig
-
 - name: install git message config template
   template:
     src: gitmessage.txt
@@ -21,4 +16,10 @@
   template:
     src: gitignore_global
     dest: ~/.gitignore_global
+    
+- name: install global git config template
+  template:
+    src: gitconfig
+    dest: ~/.gitconfig
+    validate: git config -f %s --list
 ...
