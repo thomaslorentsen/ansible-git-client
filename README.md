@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/thomaslorentsen/ansible-git-client.svg?branch=master)](https://travis-ci.org/thomaslorentsen/ansible-git-client)
+[![Ansible Role](https://img.shields.io/ansible/role/19713.svg)](https://galaxy.ansible.com/thomaslorentsen/ansible-git-client/)
 
 Ansible Git Client
 =========
