@@ -1,4 +1,6 @@
-Role Name
+[![Build Status](https://travis-ci.org/thomaslorentsen/ansible-git-client.svg?branch=master)](https://travis-ci.org/thomaslorentsen/ansible-git-client)
+
+Ansible Git Client
 =========
 
 A brief description of the role goes here.
