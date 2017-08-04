@@ -4,6 +4,11 @@ python: "2.7"
 dist: precise
 sudo: required
 
+env:
+  - ANSIBLE_VERSION=1.2.x
+  - ANSIBLE_VERSION=2.0.x
+  - ANSIBLE_VERSION=latest
+
 # Install ansible
 addons:
   apt:
@@ -12,7 +17,7 @@ addons:
 
 install:
   # Install ansible
-  - pip install ansible
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
 
   # Check ansible version
   - ansible --version
