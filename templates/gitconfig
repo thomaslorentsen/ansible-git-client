@@ -3,9 +3,13 @@
         editor = nano
 
 [user]
+{% if git_email is defined %}
         email = {{ git_email }}
+{% endif %}
+{% if git_name is defined %}
         name = {{ git_name }}
-{% if variable is defined %}
+{% endif %}
+{% if git_signingkey is defined %}
         signingkey = {{ git_signingkey }}
 {% endif %}
 
@@ -13,7 +17,7 @@
         ui = true
 
 [commit]
-{% if variable is defined %}
+{% if git_signingkey is defined %}
         gpgsign = true
 {% endif %}
         template = ~/.gitmessage.txt
