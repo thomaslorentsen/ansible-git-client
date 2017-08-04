@@ -27,7 +27,7 @@ script:
   - ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
 
   # Check git config
-  - git config --list
+  - git config --list | grep gitmessage
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
