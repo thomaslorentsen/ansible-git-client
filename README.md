@@ -6,10 +6,18 @@ Ansible Git Client
 
 Installs the git client with some configuration
 
-Requirements
+Vars
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+A list of optional vars that can be passed into the role for configuration
+
+
+| Var | Description |
+| --- | --- |
+| ```git_name``` | Git Username |
+| ```git_email``` | Git Email Address |
+| ```git_email``` | Git Email Address |
+| ```git_signingkey``` | Git PGP Key |
 
 Example Playbook
 ----------------
