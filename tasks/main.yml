@@ -1,5 +1,6 @@
 ---
 - name: install git client
+  become: yes
   package:
     name: "{{ item }}"
     state: present

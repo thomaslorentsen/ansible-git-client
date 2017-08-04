@@ -2,6 +2,7 @@
 language: python
 python: "2.7"
 dist: precise
+sudo: required
 
 # Install ansible
 addons:
@@ -20,14 +21,21 @@ install:
   - printf '[defaults]\nroles_path=../' >ansible.cfg
 
 script:
+  - whoami
+
+  - pwd
+
   # Basic role syntax check
   - ansible-playbook tests/test.yml -i tests/inventory --connection=local --syntax-check
 
   # Run the role
-  - ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
+  - ansible-playbook -i tests/inventory tests/test.yml --connection=local
 
   # Check git config
   - git config --list | grep gitmessage
+  - git config --list | grep excludesfile
+  - git config --list | grep editor
+  - git config --list | grep A+1 -e commit -e push -e pull
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
